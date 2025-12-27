@@ -1,0 +1,15 @@
+{
+  "$type": "Animals_Components_Engine.Entity_Component, Animals_Components_Engine",
+  "name": "subject",
+  "children": [
+    {
+      "$type": "Animals_Components_Tests.Message_Component, Animals_Components_Tests",
+      "messages": [
+        "The subject is swimming"
+      ]
+    },
+    {
+      "$type": "Animals_Components_Engine.Swim_Component, Animals_Components_Engine"
+    }
+  ]
+}

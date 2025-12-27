@@ -1,0 +1,11 @@
+{
+  "$type": "Animals_Data_Engine.Entity_Data, Animals_Data_Engine",
+  "name": "subject",
+  "children": [
+    {
+      "$type": "Animals_Data_Engine.Sound_Data, Animals_Data_Engine",
+      "sound": "Sound_Data",
+      "children": []
+    }
+  ]
+}

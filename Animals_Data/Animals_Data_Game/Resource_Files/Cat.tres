@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Data_Resource" load_steps=10 format=3 uid="uid://2opkp6ubevr1"]
+
+[ext_resource type="Script" uid="uid://h47g2cx6uyr8" path="res://Resources/Name_Resource.cs" id="1_d6g4q"]
+[ext_resource type="Script" uid="uid://518715b3rxav" path="res://Resources/Walk_Resource.cs" id="3_d02vd"]
+[ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="4_d6g4q"]
+[ext_resource type="Script" uid="uid://drekhansibswg" path="res://Resources/Sound_Resource.cs" id="4_ti7by"]
+[ext_resource type="Script" uid="uid://drkhdjr0bendp" path="res://Resources/Data_Resource.cs" id="5_3mhxf"]
+
+[sub_resource type="Resource" id="Resource_5asm2"]
+script = ExtResource("1_d6g4q")
+Name = "cat"
+Data_Resources = null
+metadata/_custom_type_script = "uid://h47g2cx6uyr8"
+
+[sub_resource type="Resource" id="Resource_65027"]
+script = ExtResource("3_d02vd")
+Legs_Count = 4
+Data_Resources = null
+metadata/_custom_type_script = "uid://518715b3rxav"
+
+[sub_resource type="Resource" id="Resource_donbm"]
+script = ExtResource("4_ti7by")
+Sound = "Meow"
+Data_Resources = null
+metadata/_custom_type_script = "uid://drekhansibswg"
+
+[sub_resource type="Resource" id="Resource_d0jg5"]
+script = ExtResource("4_d6g4q")
+Data_Resources = null
+metadata/_custom_type_script = "uid://b27sc0aipcned"
+
+[resource]
+script = ExtResource("5_3mhxf")
+Data_Resources = Array[Object]([SubResource("Resource_5asm2"), SubResource("Resource_65027"), SubResource("Resource_donbm"), SubResource("Resource_d0jg5")])
+metadata/_custom_type_script = "uid://drkhdjr0bendp"

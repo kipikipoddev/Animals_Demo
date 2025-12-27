@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm8inde8k44pr"]
+
+[ext_resource type="Script" uid="uid://b5ja0qb4dv620" path="res://Scenes/Actions_Scene/Actions_Scene.cs" id="1_toh63"]
+
+[node name="Actions_Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_toh63")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Make_Sound_Button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Make Sound"
+
+[node name="Walk_Button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Walk"
+
+[node name="Swim_Button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Swim"
+
+[node name="Charge_Button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Charge"
+
+[connection signal="pressed" from="VBoxContainer/Make_Sound_Button" to="." method="On_Make_Sound_Button_Pressed"]
+[connection signal="pressed" from="VBoxContainer/Walk_Button" to="." method="On_Walk_Button_Pressed"]
+[connection signal="pressed" from="VBoxContainer/Swim_Button" to="." method="On_Swim_Button_Pressed"]
+[connection signal="pressed" from="VBoxContainer/Charge_Button" to="." method="On_Charge_Button_Pressed"]

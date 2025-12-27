@@ -1,0 +1,16 @@
+{
+  "$type": "Animals_Components_Engine.Entity_Component, Animals_Components_Engine",
+  "name": "subject",
+  "children": [
+    {
+      "$type": "Animals_Components_Tests.Message_Component, Animals_Components_Tests",
+      "messages": [
+        "The subject is walking on 2 legs."
+      ]
+    },
+    {
+      "$type": "Animals_Components_Engine.Walk_Component, Animals_Components_Engine",
+      "legs_count": 2
+    }
+  ]
+}

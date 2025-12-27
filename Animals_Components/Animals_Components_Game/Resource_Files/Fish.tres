@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Entity_Resource" load_steps=6 format=3 uid="uid://cyv23f8tvccly"]
+
+[ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="2_ang4l"]
+[ext_resource type="Script" uid="uid://c7on4355oa1ee" path="res://Resources/Swim_Resource.cs" id="4_n7myi"]
+[ext_resource type="Script" uid="uid://bgx6324q6a3wa" path="res://Resources/Entity_Resource.cs" id="5_we2wb"]
+
+[sub_resource type="Resource" id="Resource_d6g4q"]
+script = ExtResource("2_ang4l")
+Frame = 1
+Data_Resources = null
+metadata/_custom_type_script = "uid://b27sc0aipcned"
+
+[sub_resource type="Resource" id="Resource_3731c"]
+script = ExtResource("4_n7myi")
+Data_Resources = null
+metadata/_custom_type_script = "uid://c7on4355oa1ee"
+
+[resource]
+script = ExtResource("5_we2wb")
+Name = "fish"
+Data_Resources = Array[Object]([SubResource("Resource_d6g4q"), SubResource("Resource_3731c")])
+metadata/_custom_type_script = "uid://bgx6324q6a3wa"

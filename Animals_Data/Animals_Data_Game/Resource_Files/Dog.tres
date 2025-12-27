@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Data_Resource" load_steps=12 format=3 uid="uid://cxpuh61apws8t"]
+
+[ext_resource type="Script" uid="uid://drkhdjr0bendp" path="res://Resources/Data_Resource.cs" id="1_le3ai"]
+[ext_resource type="Script" uid="uid://h47g2cx6uyr8" path="res://Resources/Name_Resource.cs" id="1_xn7x3"]
+[ext_resource type="Script" uid="uid://c7on4355oa1ee" path="res://Resources/Swim_Resource.cs" id="2_3731c"]
+[ext_resource type="Script" uid="uid://518715b3rxav" path="res://Resources/Walk_Resource.cs" id="3_ad5sg"]
+[ext_resource type="Script" uid="uid://drekhansibswg" path="res://Resources/Sound_Resource.cs" id="4_55xd5"]
+[ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="5_3731c"]
+
+[sub_resource type="Resource" id="Resource_5asm2"]
+script = ExtResource("1_xn7x3")
+Name = "dog"
+Data_Resources = null
+metadata/_custom_type_script = "uid://h47g2cx6uyr8"
+
+[sub_resource type="Resource" id="Resource_e0vhe"]
+script = ExtResource("2_3731c")
+Data_Resources = null
+metadata/_custom_type_script = "uid://c7on4355oa1ee"
+
+[sub_resource type="Resource" id="Resource_65027"]
+script = ExtResource("3_ad5sg")
+Legs_Count = 4
+Data_Resources = null
+metadata/_custom_type_script = "uid://518715b3rxav"
+
+[sub_resource type="Resource" id="Resource_donbm"]
+script = ExtResource("4_55xd5")
+Sound = "Woof"
+Data_Resources = null
+metadata/_custom_type_script = "uid://drekhansibswg"
+
+[sub_resource type="Resource" id="Resource_ad5sg"]
+script = ExtResource("5_3731c")
+Frame = 3
+Data_Resources = null
+metadata/_custom_type_script = "uid://b27sc0aipcned"
+
+[resource]
+script = ExtResource("1_le3ai")
+Data_Resources = Array[Object]([SubResource("Resource_5asm2"), SubResource("Resource_e0vhe"), SubResource("Resource_65027"), SubResource("Resource_donbm"), SubResource("Resource_ad5sg")])
+metadata/_custom_type_script = "uid://drkhdjr0bendp"

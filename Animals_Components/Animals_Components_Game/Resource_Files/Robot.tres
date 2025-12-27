@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Entity_Resource" load_steps=10 format=3 uid="uid://ddklab87b61hn"]
+
+[ext_resource type="Script" uid="uid://drekhansibswg" path="res://Resources/Sound_Resource.cs" id="1_eiacl"]
+[ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="2_dla88"]
+[ext_resource type="Script" uid="uid://518715b3rxav" path="res://Resources/Walk_Resource.cs" id="3_c70q2"]
+[ext_resource type="Script" uid="uid://bidpsh6w2endw" path="res://Resources/Charge_Resource.cs" id="4_eiacl"]
+[ext_resource type="Script" uid="uid://bgx6324q6a3wa" path="res://Resources/Entity_Resource.cs" id="5_4pxcl"]
+
+[sub_resource type="Resource" id="Resource_461hc"]
+script = ExtResource("1_eiacl")
+Sound = "Beep"
+Data_Resources = null
+metadata/_custom_type_script = "uid://drekhansibswg"
+
+[sub_resource type="Resource" id="Resource_d6g4q"]
+script = ExtResource("2_dla88")
+Frame = 2
+Data_Resources = null
+metadata/_custom_type_script = "uid://b27sc0aipcned"
+
+[sub_resource type="Resource" id="Resource_d0jg5"]
+script = ExtResource("3_c70q2")
+Legs_Count = 2
+Data_Resources = null
+metadata/_custom_type_script = "uid://518715b3rxav"
+
+[sub_resource type="Resource" id="Resource_dla88"]
+script = ExtResource("4_eiacl")
+Data_Resources = null
+metadata/_custom_type_script = "uid://bidpsh6w2endw"
+
+[resource]
+script = ExtResource("5_4pxcl")
+Name = "robot"
+Data_Resources = Array[Object]([SubResource("Resource_461hc"), SubResource("Resource_d6g4q"), SubResource("Resource_d0jg5"), SubResource("Resource_dla88")])
+metadata/_custom_type_script = "uid://bgx6324q6a3wa"

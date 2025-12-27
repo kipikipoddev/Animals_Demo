@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://blbaeb6qg3bh5"]
+
+[ext_resource type="Script" uid="uid://c36alxqkwqeds" path="res://Scenes/Main_Scene/Main_Scene.cs" id="1_3h14l"]
+[ext_resource type="PackedScene" uid="uid://cm8inde8k44pr" path="res://Scenes/Actions_Scene/Actions_Scene.tscn" id="2_cut22"]
+[ext_resource type="Texture2D" uid="uid://b554vcc8l2aiq" path="res://Assests/Entites.png" id="3_njiv8"]
+
+[node name="Main_Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3h14l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="ItemList" type="ItemList" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+
+[node name="Actions_Scene" parent="MarginContainer/GridContainer" instance=ExtResource("2_cut22")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Actions_Label" type="Label" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+position = Vector2(826, 467)
+scale = Vector2(0.72439027, 0.72439027)
+texture = ExtResource("3_njiv8")
+hframes = 5
+
+[connection signal="item_selected" from="MarginContainer/GridContainer/ItemList" to="." method="On_Item_Selected"]

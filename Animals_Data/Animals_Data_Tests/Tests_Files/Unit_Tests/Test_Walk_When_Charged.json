@@ -1,0 +1,16 @@
+{
+  "$type": "Animals_Data_Engine.Entity_Data, Animals_Data_Engine",
+  "name": "subject",
+  "children": [
+    {
+      "$type": "Animals_Data_Engine.Walk_Data, Animals_Data_Engine",
+      "legs_count": 2,
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Engine.Charge_Data, Animals_Data_Engine",
+      "is_charged": false,
+      "children": []
+    }
+  ]
+}

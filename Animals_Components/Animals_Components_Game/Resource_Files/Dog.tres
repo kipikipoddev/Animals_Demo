@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Entity_Resource" load_steps=10 format=3 uid="uid://cessaobeb7nls"]
+
+[ext_resource type="Script" uid="uid://drekhansibswg" path="res://Resources/Sound_Resource.cs" id="1_ealxr"]
+[ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="2_xn7x3"]
+[ext_resource type="Script" uid="uid://518715b3rxav" path="res://Resources/Walk_Resource.cs" id="3_3731c"]
+[ext_resource type="Script" uid="uid://bgx6324q6a3wa" path="res://Resources/Entity_Resource.cs" id="4_ad5sg"]
+[ext_resource type="Script" uid="uid://c7on4355oa1ee" path="res://Resources/Swim_Resource.cs" id="4_xn7x3"]
+
+[sub_resource type="Resource" id="Resource_461hc"]
+script = ExtResource("1_ealxr")
+Sound = "Woof"
+Data_Resources = null
+metadata/_custom_type_script = "uid://drekhansibswg"
+
+[sub_resource type="Resource" id="Resource_d6g4q"]
+script = ExtResource("2_xn7x3")
+Frame = 3
+Data_Resources = null
+metadata/_custom_type_script = "uid://b27sc0aipcned"
+
+[sub_resource type="Resource" id="Resource_d0jg5"]
+script = ExtResource("3_3731c")
+Legs_Count = 4
+Data_Resources = null
+metadata/_custom_type_script = "uid://518715b3rxav"
+
+[sub_resource type="Resource" id="Resource_3731c"]
+script = ExtResource("4_xn7x3")
+Data_Resources = null
+metadata/_custom_type_script = "uid://c7on4355oa1ee"
+
+[resource]
+script = ExtResource("4_ad5sg")
+Name = "dog"
+Data_Resources = Array[Object]([SubResource("Resource_461hc"), SubResource("Resource_d6g4q"), SubResource("Resource_d0jg5"), SubResource("Resource_3731c")])
+metadata/_custom_type_script = "uid://bgx6324q6a3wa"
