@@ -9,6 +9,6 @@ public static class Message_Send_Extensions
             handler.Handle(msg);
     }
 
-    public static IEnumerable<IHandler<T>> Get_Handlers<T>(this T msg)
-        where T : Message => msg.Component.Children<IHandler<T>>();
+    public static IHandler<T>[] Get_Handlers<T>(this T msg)
+        where T : Message => msg.Component.Children<IHandler<T>>().ToArray();
 }

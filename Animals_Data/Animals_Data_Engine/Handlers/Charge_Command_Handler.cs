@@ -6,7 +6,7 @@ public static class Charge_Command_Handler
     public static void Handle(Entity_Data entity)
     {
         var charged_data = entity.Child<Charge_Data>();
-        new Print_Command(entity, "The {0} is charging.");
+        new Print_Event(entity, "The {0} is charging.");
         charged_data.Is_Charged = true;
     }
 

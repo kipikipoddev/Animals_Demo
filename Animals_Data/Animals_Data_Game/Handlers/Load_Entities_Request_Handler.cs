@@ -1,17 +1,17 @@
 namespace Animals_Data_Game;
 
-public static class Load_Data_Request_Handler
+public static class Load_Entities_Request_Handler
 {
     private static readonly string Path = ".\\Resource_Files\\";
     private const string Suffix = "*.tres";
 
-    [Handler<Load_Data_Request>]
-    public static Data[] Handle()
+    [Handler<Load_Entities_Request>]
+    public static Entity_Data[] Handle()
     {
         return Directory
             .GetFiles(Path, Suffix, SearchOption.AllDirectories)
-            .Select(GD.Load<Data_Resource>)
-            .Select(r => r.Map())
+            .Select(GD.Load<Entity_Resource>)
+            .Select(r => (Entity_Data)r.Map())
             .ToArray();
     }
 }

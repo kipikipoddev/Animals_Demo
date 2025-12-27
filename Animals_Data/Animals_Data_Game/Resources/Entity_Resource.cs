@@ -1,7 +1,7 @@
 namespace Animals_Data_Game;
 
 [GlobalClass]
-public partial class Name_Resource : Data_Resource
+public partial class Entity_Resource : Data_Resource
 {
     [Export]
     public string Name { get; set; }

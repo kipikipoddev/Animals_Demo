@@ -8,5 +8,6 @@ public static class Message_Validation_Extensions
     private static bool Is_Validators_Valid<T>(this T msg)
         where T : Message => msg.Component.Children<IValidator<T>>().All(v => v.Is_Valid(msg));
 
-    public static bool Is_Invalid(this Message msg) => !msg.Is_Valid();
+    public static bool Is_Invalid<T>(this T msg)
+        where T : Message => !msg.Is_Valid();
 }

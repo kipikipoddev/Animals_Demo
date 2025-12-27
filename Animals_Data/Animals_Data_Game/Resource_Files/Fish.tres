@@ -1,28 +1,22 @@
-[gd_resource type="Resource" script_class="Data_Resource" load_steps=8 format=3 uid="uid://belbmdub6q4sr"]
+[gd_resource type="Resource" script_class="Entity_Resource" load_steps=6 format=3 uid="uid://dp1ud0ircq1yv"]
 
-[ext_resource type="Script" uid="uid://h47g2cx6uyr8" path="res://Resources/Name_Resource.cs" id="1_dnimf"]
-[ext_resource type="Script" uid="uid://c7on4355oa1ee" path="res://Resources/Swim_Resource.cs" id="2_ang4l"]
-[ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="3_kqh3a"]
-[ext_resource type="Script" uid="uid://drkhdjr0bendp" path="res://Resources/Data_Resource.cs" id="5_we2wb"]
+[ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="3_ouq2k"]
+[ext_resource type="Script" uid="uid://c7on4355oa1ee" path="res://Resources/Swim_Resource.cs" id="4_n7myi"]
+[ext_resource type="Script" uid="uid://dkq8j16udghu5" path="res://Resources/Entity_Resource.cs" id="5_we2wb"]
 
-[sub_resource type="Resource" id="Resource_5asm2"]
-script = ExtResource("1_dnimf")
-Name = "Fish"
-Data_Resources = null
-metadata/_custom_type_script = "uid://h47g2cx6uyr8"
-
-[sub_resource type="Resource" id="Resource_e0vhe"]
-script = ExtResource("2_ang4l")
-Data_Resources = null
-metadata/_custom_type_script = "uid://c7on4355oa1ee"
-
-[sub_resource type="Resource" id="Resource_dnimf"]
-script = ExtResource("3_kqh3a")
+[sub_resource type="Resource" id="Resource_l7xp6"]
+script = ExtResource("3_ouq2k")
 Frame = 1
 Data_Resources = null
 metadata/_custom_type_script = "uid://b27sc0aipcned"
 
+[sub_resource type="Resource" id="Resource_xn7x3"]
+script = ExtResource("4_n7myi")
+Data_Resources = null
+metadata/_custom_type_script = "uid://c7on4355oa1ee"
+
 [resource]
 script = ExtResource("5_we2wb")
-Data_Resources = Array[Object]([SubResource("Resource_5asm2"), SubResource("Resource_e0vhe"), SubResource("Resource_dnimf")])
-metadata/_custom_type_script = "uid://drkhdjr0bendp"
+Name = "fish"
+Data_Resources = Array[Object]([SubResource("Resource_l7xp6"), SubResource("Resource_xn7x3")])
+metadata/_custom_type_script = "uid://dkq8j16udghu5"

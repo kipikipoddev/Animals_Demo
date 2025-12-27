@@ -31,7 +31,7 @@ public partial class Main_Scene : Control, IListener<Print_Event>
 
     public void On_Event(Print_Event e)
     {
-        actions_label.Text += e.Message;
+        actions_label.Text += string.Format(e.Message, e.Entity.Name) + '\n';
     }
 
     private void Get_Nodes()
@@ -44,7 +44,7 @@ public partial class Main_Scene : Control, IListener<Print_Event>
 
     private void Add_Entites()
     {
-        var entities = new Load_Data_Request().Send() as Entity_Data[];
+        var entities = new Load_Entities_Request().Send() as Entity_Data[];
         name_to_data = entities.ToDictionary(d => d.Name);
         foreach (var name in name_to_data.Keys)
             item_list.AddItem(name);

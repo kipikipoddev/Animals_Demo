@@ -6,7 +6,7 @@ public static class Make_Sound_Command_Handler
     public static void Handle(Entity_Data entity)
     {
         var sound = entity.Child<Sound_Data>().Sound;
-        new Print_Command(entity, sound);
+        new Print_Event(entity, sound);
     }
 
     [Validator<Make_Sound_Command>]

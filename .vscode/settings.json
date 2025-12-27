@@ -1,0 +1,10 @@
+{
+	"files.autoSave": "afterDelay",
+	"files.exclude": {
+		"**/.vs": true,
+		"**/**.uid": true,
+		"**/bin**": true,
+		"**/obj**": true,
+		"**/.godot**": true
+	}
+}

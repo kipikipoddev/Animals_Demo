@@ -6,7 +6,7 @@ public static class Walk_Command_Handler
     public static void Handle(Entity_Data entity)
     {
         var legs_count = entity.Child<Walk_Data>().Legs_Count;
-        new Print_Command(entity, "The {0} is walking on " + legs_count + " legs.");
+        new Print_Event(entity, "The {0} is walking on " + legs_count + " legs.");
     }
 
     [Validator<Walk_Command>]

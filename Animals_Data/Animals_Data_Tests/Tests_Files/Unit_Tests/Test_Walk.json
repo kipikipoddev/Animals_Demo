@@ -6,6 +6,46 @@
       "$type": "Animals_Data_Engine.Walk_Data, Animals_Data_Engine",
       "legs_count": 2,
       "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
+    },
+    {
+      "$type": "Animals_Data_Tests.Message_Data, Animals_Data_Tests",
+      "message": "The {0} is walking on 2 legs.",
+      "children": []
     }
   ]
 }
