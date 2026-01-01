@@ -2,7 +2,7 @@ using Animals_Component_Game;
 
 namespace Animals_Data_Game;
 
-public partial class Main_Scene : Control, IHandler<Print_Event>
+public partial class Main_Scene : Control
 {
     private ItemList item_list;
     private Label actions_label;
@@ -20,7 +20,7 @@ public partial class Main_Scene : Control, IHandler<Print_Event>
         On_Item_Selected(0);
 
         foreach (var component in parent.Children)
-            this.Add_Handler(component);
+            component.Add_Listner<Print_Event>(Handle);
     }
 
     public void On_Item_Selected(int index)
@@ -46,7 +46,7 @@ public partial class Main_Scene : Control, IHandler<Print_Event>
 
     private void Add_Entites()
     {
-        parent = new Component().Add(new Components_Loader_Component());
+        parent = Component_Extensions.Add(new Component(), new Components_Loader_Component());
         new Load_Components_Command(parent).Send();
         foreach (var entity in parent.Children<Entity_Component>())
             item_list.AddItem(entity.Name);

@@ -12,5 +12,5 @@ public static class Assert_Extensions
         Assert.That(value, Is.True);
     }
 
-    public static void Assert_Invalid(this Message message) => message.Is_Valid().Assert_False();
+    public static void Assert_Invalid(this Command cmd) => cmd.Is_Valid().Assert_False();
 }

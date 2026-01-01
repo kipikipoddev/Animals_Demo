@@ -1,7 +1,7 @@
 namespace Animals_Components_Core;
 
 public interface IValidator<T>
-    where T : Message
+    where T : Command
 {
-    bool Is_Valid(T message);
+    bool Is_Valid(T cmd);
 }

@@ -3,6 +3,13 @@ namespace Animals_Components_Tests;
 [TestFixture]
 public class Unit_Tests : Test_Base<Entity_Component>
 {
+    [SetUp]
+    public override void Setup()
+    {
+        base.Setup();
+        Subject.Add_Listner<Print_Event>(Handle);
+    }
+
     [Test]
     public void Test_Charge()
     {
@@ -26,7 +33,7 @@ public class Unit_Tests : Test_Base<Entity_Component>
     [Test]
     public void Test_Make_Sound()
     {
-        Subject.Add(new Sound_Component(nameof(Sound_Component)));
+        Subject.Add(new Sound_Component(nameof(Subject)));
         new Make_Sound_Command(Subject).Send();
     }
 
@@ -64,6 +71,7 @@ public class Unit_Tests : Test_Base<Entity_Component>
         new Swim_Command(Subject).Assert_Invalid();
     }
 
-    protected override Entity_Component Get_Subject() =>
-        new Entity_Component(nameof(Subject)).Add(new Message_Component());
+    protected override Entity_Component Get_Subject() => new(nameof(Subject));
+
+    private void Handle(Print_Event e) => e.Component.Add(new Message_Component(e.Message));
 }

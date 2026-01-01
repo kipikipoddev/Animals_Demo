@@ -9,7 +9,6 @@ public static class Serialization_Extensions
     {
         TypeNameHandling = TypeNameHandling.Objects,
         Formatting = Formatting.Indented,
-        NullValueHandling = NullValueHandling.Ignore,
         ContractResolver = new DefaultContractResolver
         {
             NamingStrategy = new SnakeCaseNamingStrategy(),

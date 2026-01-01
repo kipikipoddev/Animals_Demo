@@ -10,7 +10,7 @@ public partial class Component_Resource : Resource
     {
         var data = Get_Component();
         foreach (var data_resource in Data_Resources)
-            data.Add(data_resource.Map());
+            Component_Extensions.Add(data, data_resource.Map());
         return data;
     }
 

@@ -2,12 +2,14 @@ namespace Animals_Components_Core;
 
 public static class Command_Extensions
 {
-    public static object Send<T>(this T cmd)
+    public static void Send<T>(this T cmd)
         where T : Command
     {
-        var is_valid = cmd.Is_Valid();
-        if (is_valid)
-            cmd.Send_Message();
-        return is_valid;
+        if (cmd.Is_Valid())
+            foreach (var handler in cmd.Get_Handlers())
+                handler.Handle(cmd);
     }
+
+    public static IHandler<T>[] Get_Handlers<T>(this T cmd)
+        where T : Command => cmd.Component.Children<IHandler<T>>().ToArray();
 }

@@ -1,7 +1,7 @@
 namespace Animals_Components_Core;
 
 public interface IHandler<T>
-    where T : Message
+    where T : Command
 {
-    void Handle(T message);
+    void Handle(T cmd);
 }

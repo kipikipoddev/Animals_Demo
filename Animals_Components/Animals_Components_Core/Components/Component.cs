@@ -2,7 +2,10 @@ namespace Animals_Components_Core;
 
 public record Component
 {
-    public List<Component> Children { get; } = [];
+    private readonly List<Component> children = [];
+    public IEnumerable<Component> Children => children;
 
-    public bool ShouldSerializeChildren() => Children.Count != 0;
+    public bool ShouldSerializeChildren() => children.Count != 0;
+
+    public void Add_Child(Component component) => children.Add(component);
 }

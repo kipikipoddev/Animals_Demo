@@ -3,10 +3,7 @@
   "name": "subject",
   "children": [
     {
-      "$type": "Animals_Components_Tests.Message_Component, Animals_Components_Tests",
-      "messages": [
-        "The subject is walking on 2 legs."
-      ]
+      "$type": "Animals_Components_Core.Listener_Component`1[[Animals_Components_Engine.Print_Event, Animals_Components_Engine]], Animals_Components_Core"
     },
     {
       "$type": "Animals_Components_Engine.Walk_Component, Animals_Components_Engine",
@@ -15,6 +12,10 @@
     {
       "$type": "Animals_Components_Engine.Charge_Component, Animals_Components_Engine",
       "is_charged": false
+    },
+    {
+      "$type": "Animals_Components_Tests.Message_Component, Animals_Components_Tests",
+      "messages": "The subject is walking on 2 legs."
     }
   ]
 }

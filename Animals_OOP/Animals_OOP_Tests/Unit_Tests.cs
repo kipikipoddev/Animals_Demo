@@ -19,8 +19,7 @@ public class Unit_Tests
     [Test]
     public void Robot_Dog_Swim()
     {
-        var robot_dog = new Robot_Dog(Printer);
-        robot_dog.Swim();
+        new Robot_Dog(Printer).Swim();
 
         Verify_Never("The robot dog is swimming.");
     }

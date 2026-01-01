@@ -3,14 +3,15 @@
   "name": "subject",
   "children": [
     {
-      "$type": "Animals_Components_Tests.Message_Component, Animals_Components_Tests",
-      "messages": [
-        "The subject is charging."
-      ]
+      "$type": "Animals_Components_Core.Listener_Component`1[[Animals_Components_Engine.Print_Event, Animals_Components_Engine]], Animals_Components_Core"
     },
     {
       "$type": "Animals_Components_Engine.Charge_Component, Animals_Components_Engine",
       "is_charged": true
+    },
+    {
+      "$type": "Animals_Components_Tests.Message_Component, Animals_Components_Tests",
+      "messages": "The subject is charging."
     }
   ]
 }
