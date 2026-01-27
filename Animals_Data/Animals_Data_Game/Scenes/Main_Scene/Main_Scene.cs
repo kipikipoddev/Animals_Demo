@@ -2,6 +2,9 @@ namespace Animals_Data_Game;
 
 public partial class Main_Scene : Control, IListener<Print_Event>
 {
+    [Export]
+    public Entity_Resource[] Entities;
+
     private Dictionary<string, Entity_Data> name_to_data;
 
     private ItemList item_list;
@@ -44,7 +47,7 @@ public partial class Main_Scene : Control, IListener<Print_Event>
 
     private void Add_Entites()
     {
-        var entities = new Load_Entities_Request().Send() as Entity_Data[];
+        var entities = Entities.Select(e => (Entity_Data)e.Map());
         name_to_data = entities.ToDictionary(d => d.Name);
         foreach (var name in name_to_data.Keys)
             item_list.AddItem(name);

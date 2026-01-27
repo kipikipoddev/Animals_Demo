@@ -4,11 +4,14 @@ namespace Animals_Data_Game;
 
 public partial class Main_Scene : Control
 {
+    [Export]
+    public Entity_Resource[] Entities;
+
     private ItemList item_list;
     private Label actions_label;
     private Actions_Scene actions_scene;
     private Sprite2D sprite_2d;
-    private Component parent;
+    private Entity_Component[] entities;
 
     public override void _Ready()
     {
@@ -19,14 +22,14 @@ public partial class Main_Scene : Control
         item_list.Select(0);
         On_Item_Selected(0);
 
-        foreach (var component in parent.Children)
+        foreach (var component in entities)
             component.Add_Listner<Print_Event>(Handle);
     }
 
     public void On_Item_Selected(int index)
     {
         var name = item_list.GetItemText(index);
-        actions_scene.Entity = parent.Children<Entity_Component>().First(c => c.Name == name);
+        actions_scene.Entity = entities.First(c => c.Name == name);
         actions_label.Text = string.Empty;
         sprite_2d.Frame = actions_scene.Entity.Child<Sprite_Component>().Frame;
     }
@@ -46,9 +49,8 @@ public partial class Main_Scene : Control
 
     private void Add_Entites()
     {
-        parent = Component_Extensions.Add(new Component(), new Components_Loader_Component());
-        new Load_Components_Command(parent).Send();
-        foreach (var entity in parent.Children<Entity_Component>())
+        entities = Entities.Select(e => (Entity_Component)e.Map()).ToArray();
+        foreach (var entity in entities)
             item_list.AddItem(entity.Name);
     }
 }
