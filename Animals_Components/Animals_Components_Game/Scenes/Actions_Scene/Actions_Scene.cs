@@ -11,16 +11,13 @@ public partial class Actions_Scene : Control
         set
         {
             field = value;
+
+            Set_Visibility();
             Update();
         }
     }
 
     public override void _Ready()
-    {
-        Get_Nodes();
-    }
-
-    private void Get_Nodes()
     {
         walk_button = GetNode<Button>("%Walk_Button");
         swim_button = GetNode<Button>("%Swim_Button");
@@ -50,6 +47,14 @@ public partial class Actions_Scene : Control
     {
         new Make_Sound_Command(Entity).Send();
         Update();
+    }
+
+    private void Set_Visibility()
+    {
+        walk_button.Visible = Entity.Has_Child<Walk_Component>();
+        swim_button.Visible = Entity.Has_Child<Swim_Component>();
+        charge_button.Visible = Entity.Has_Child<Charge_Component>();
+        make_sound_button.Visible = Entity.Has_Child<Sound_Component>();
     }
 
     private void Update()

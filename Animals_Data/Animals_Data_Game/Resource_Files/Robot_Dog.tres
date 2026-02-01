@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://518715b3rxav"
 
 [sub_resource type="Resource" id="Resource_kxpow"]
 script = ExtResource("2_itscf")
-Sound = "Woof"
+Sound = "Bark"
 Data_Resources = null
 metadata/_custom_type_script = "uid://drekhansibswg"
 

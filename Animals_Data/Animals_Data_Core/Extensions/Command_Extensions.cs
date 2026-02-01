@@ -6,11 +6,11 @@ public static class Command_Extensions
 {
     public static bool Send(this Command cmd)
     {
-        if (!cmd.Is_Valid())
+        var args = cmd.Get_Properties();
+        if (!cmd.Is_Valid(args))
             return false;
-        var ars = cmd.Get_Properties();
         foreach (var handler in cmd.Get_Handlers())
-            handler.Invoke(null, ars);
+            handler.Invoke(args);
         return true;
     }
 

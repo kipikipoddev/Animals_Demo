@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_461hc"]
 script = ExtResource("1_itscf")
-Sound = "Woof"
+Sound = "Bark"
 Data_Resources = null
 metadata/_custom_type_script = "uid://drekhansibswg"
 

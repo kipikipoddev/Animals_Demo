@@ -25,29 +25,29 @@ theme_override_constants/separation = 10
 
 [node name="Make_Sound_Button" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 text = "Make Sound"
 
 [node name="Walk_Button" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 text = "Walk"
 
 [node name="Swim_Button" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 text = "Swim"
 
 [node name="Charge_Button" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 text = "Charge"
 

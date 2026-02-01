@@ -18,6 +18,9 @@ public static class Reflection_Extensions
     public static object?[] Get_Properties(this object obj) =>
         obj.GetType().GetProperties().Select(p => p.GetValue(obj)).ToArray();
 
+    public static object? Invoke(this MethodInfo method, object?[] args) =>
+        method.Invoke(null, args);
+
     private static Type? Get_Type(this MethodInfo method, Type att_type) =>
         method.GetCustomAttribute(att_type)?.GetType().GenericTypeArguments.First();
 
