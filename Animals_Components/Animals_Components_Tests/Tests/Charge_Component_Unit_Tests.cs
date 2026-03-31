@@ -17,6 +17,4 @@ public class Charge_Component_Unit_Tests : Base_Unit_Tests<Charge_Component>
         Verify(Printed_Actions.Charging);
         Component.Is_Charged.Assert_True();
     }
-
-    protected override Charge_Component Get_Component() => new();
 }

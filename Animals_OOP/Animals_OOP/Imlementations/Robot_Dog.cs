@@ -1,4 +1,4 @@
-public class Robot_Dog(IPrinter printer) : Robot(printer), ISwim
+public class Robot_Dog : Robot, ISwim
 {
     public bool Can_Swim => Is_Charged;
 

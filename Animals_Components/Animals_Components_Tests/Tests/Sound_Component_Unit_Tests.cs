@@ -8,7 +8,7 @@ public class Sound_Component_Unit_Tests : Base_Unit_Tests<Sound_Component>
     {
         Component.Make_Sound();
 
-        Verify(Printed_Actions.Meow);
+        Verify(Printed_Actions.Meowing);
     }
 
     [Test]
@@ -25,13 +25,14 @@ public class Sound_Component_Unit_Tests : Base_Unit_Tests<Sound_Component>
     [Test]
     public void Test_Sound_If_Charged()
     {
-        Subject.Add(new Charge_Component(true));
+        Subject.Add(new Charge_Component());
+        Subject.Child<ICharge_Component>().Charge();
 
         Component.Make_Sound();
 
-        Verify(Printed_Actions.Meow);
+        Verify(Printed_Actions.Meowing);
         Subject.Child<ICharge_Component>().Is_Charged.Assert_False();
     }
 
-    protected override Sound_Component Get_Component() => new(Printed_Actions.Meow);
+    protected override Sound_Component Get_Component() => new(Printed_Actions.Meowing);
 }

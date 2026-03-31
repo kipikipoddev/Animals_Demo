@@ -3,13 +3,6 @@ namespace Animals_OOP_Tests;
 [TestFixture]
 public class Robot_Unit_Tests : Base_Unit_Tests<Robot>
 {
-    [SetUp]
-    public override void SetUp()
-    {
-        base.SetUp();
-        Subject = new Robot(Printer);
-    }
-
     [Test]
     public void Robot_Make_Sound()
     {
@@ -25,7 +18,7 @@ public class Robot_Unit_Tests : Base_Unit_Tests<Robot>
 
         Subject.Make_Sound();
 
-        Verify(Printed_Actions.Beeping);
+        Verify("The robot is beeping");
         Assert.That(Subject.Is_Charged, Is.False);
     }
 
@@ -34,7 +27,8 @@ public class Robot_Unit_Tests : Base_Unit_Tests<Robot>
     {
         Subject.Charge();
 
-        Verify(Printed_Actions.Charging);
+        Verify("The robot is charging");
+        Assert.That(Subject.Is_Charged, Is.True);
     }
 
     [Test]
@@ -43,6 +37,6 @@ public class Robot_Unit_Tests : Base_Unit_Tests<Robot>
         Subject.Charge();
         Subject.Charge();
 
-        Verify(Printed_Actions.Charging);
+        Verify("The robot is charging");
     }
 }

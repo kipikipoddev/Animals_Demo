@@ -1,8 +1,7 @@
-public class Entity(IPrinter printer)
+public class Entity
 {
-    private readonly IPrinter printer = printer;
-    public string Name => GetType().Name.Replace('_', ' ').ToLower();
+    private string Name => GetType().Name.Replace('_', ' ').ToLower();
 
-    public void Print(Printed_Actions action) =>
-        printer.Print($"The {Name} is {action.ToString().ToLower()}");
+    protected void Print(Printed_Actions action) =>
+        Console.WriteLine($"The {Name} is {action.ToString().ToLower()}");
 }

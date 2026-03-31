@@ -3,13 +3,6 @@ namespace Animals_OOP_Tests;
 [TestFixture]
 public class Robot_Dog_Unit_Tests : Base_Unit_Tests<Robot_Dog>
 {
-    [SetUp]
-    public override void SetUp()
-    {
-        base.SetUp();
-        Subject = new Robot_Dog(Printer);
-    }
-
     [Test]
     public void Robot_Dog_Swim()
     {
@@ -25,7 +18,7 @@ public class Robot_Dog_Unit_Tests : Base_Unit_Tests<Robot_Dog>
 
         Subject.Swim();
 
-        Verify(Printed_Actions.Swimming);
+        Verify("The robot dog is swimming");
         Assert.That(Subject.Is_Charged, Is.False);
     }
 
@@ -44,7 +37,7 @@ public class Robot_Dog_Unit_Tests : Base_Unit_Tests<Robot_Dog>
 
         Subject.Make_Sound();
 
-        Verify(Printed_Actions.Barking);
+        Verify("The robot dog is barking");
         Assert.That(Subject.Is_Charged, Is.False);
     }
 
@@ -53,7 +46,8 @@ public class Robot_Dog_Unit_Tests : Base_Unit_Tests<Robot_Dog>
     {
         Subject.Charge();
 
-        Verify(Printed_Actions.Charging);
+        Verify("The robot dog is charging");
+        Assert.That(Subject.Is_Charged, Is.True);
     }
 
     [Test]
@@ -62,6 +56,6 @@ public class Robot_Dog_Unit_Tests : Base_Unit_Tests<Robot_Dog>
         Subject.Charge();
         Subject.Charge();
 
-        Verify(Printed_Actions.Charging);
+        Verify("The robot dog is charging");
     }
 }

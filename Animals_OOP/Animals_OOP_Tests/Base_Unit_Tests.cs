@@ -1,29 +1,25 @@
-using Moq;
-
 namespace Animals_OOP_Tests;
 
 [TestFixture]
 public class Base_Unit_Tests<T>
 {
-    private readonly Mock<IPrinter> printer_mock = new();
-    protected IPrinter Printer => new Printer(); //printer_mock.Object;
     protected T Subject;
+    private StringWriter sw;
 
-    public virtual void SetUp() => printer_mock.Reset();
+    [SetUp]
+    public void SetUp()
+    {
+        sw = new StringWriter();
+        Console.SetOut(sw);
+        Subject = Activator.CreateInstance<T>();
+    }
 
-    protected void Verify(Printed_Actions action) =>
-        printer_mock.Verify(
-            m => m.Print($"The {Name} is {action.ToString().ToLower()}"),
-            Times.Once
-        );
+    [TearDown]
+    public void TearDown() => sw.Dispose();
 
-    protected void Verify_Never() =>
-        printer_mock.Verify(m => m.Print(It.IsAny<string>()), Times.Never);
+    protected void Verify_Never() => Assert.That(sw.ToString(), Is.EqualTo(string.Empty));
 
-    private string Name => Subject.GetType().Name.Replace('_', ' ').ToLower();
-}
+    protected void Verify(string message) => Assert.That(Last_Printed, Is.EqualTo(message));
 
-class Printer : IPrinter
-{
-    public void Print(string message) => Console.WriteLine(message);
+    private string Last_Printed => sw.ToString().Split("\r\n")[^2];
 }

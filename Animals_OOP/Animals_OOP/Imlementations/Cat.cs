@@ -1,4 +1,4 @@
-public class Cat(IPrinter printer) : Entity(printer), ISound
+public class Cat : Entity, ISound
 {
     public bool Can_Make_Sound => true;
 

@@ -1,4 +1,4 @@
-public class Fish(IPrinter printer) : Entity(printer), ISwim
+public class Fish : Entity, ISwim
 {
     public bool Can_Swim => true;
 

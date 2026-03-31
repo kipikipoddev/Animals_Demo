@@ -1,8 +1,8 @@
 namespace Animals_Components_Engine;
 
-public class Charge_Component(bool is_charged = false) : Component, ICharge_Component
+public record Charge_Component : Component, ICharge_Component
 {
-    public bool Is_Charged { get; private set; } = is_charged;
+    public bool Is_Charged { get; private set; }
 
     public bool Can_Charge => !Is_Charged;
 

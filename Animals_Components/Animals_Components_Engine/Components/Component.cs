@@ -1,6 +1,6 @@
 namespace Animals_Components_Engine;
 
-public class Component : IComponent
+public record Component : IComponent
 {
     public IComponent Parent { get; set; }
 

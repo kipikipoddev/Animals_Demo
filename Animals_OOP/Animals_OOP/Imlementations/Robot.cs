@@ -1,6 +1,5 @@
-public class Robot(IPrinter printer) : Entity(printer), ISound, ICharge
+public class Robot : Entity, ISound, ICharge
 {
-    protected readonly IPrinter Printer = printer;
     public bool Can_Make_Sound => Is_Charged;
 
     public bool Is_Charged { get; protected set; }

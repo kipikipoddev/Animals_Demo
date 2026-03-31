@@ -1,4 +1,4 @@
-public class Dog(IPrinter printer) : Entity(printer), ISound, ISwim
+public class Dog : Entity, ISound, ISwim
 {
     public bool Can_Make_Sound => true;
 
