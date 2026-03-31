@@ -1,4 +1,4 @@
-public class Robot(IPrinter printer) : ISound, ICharge
+public class Robot(IPrinter printer) : Entity(printer), ISound, ICharge
 {
     protected readonly IPrinter Printer = printer;
     public bool Can_Make_Sound => Is_Charged;
@@ -11,7 +11,7 @@ public class Robot(IPrinter printer) : ISound, ICharge
     {
         if (Can_Charge)
         {
-            Printer.Print(Printed_Actions.Charging);
+            Print(Printed_Actions.Charging);
             Is_Charged = true;
         }
     }
@@ -20,7 +20,7 @@ public class Robot(IPrinter printer) : ISound, ICharge
     {
         if (Can_Make_Sound)
         {
-            Printer.Print(Printed_Actions.Beep);
+            Print(Printed_Actions.Beeping);
             Is_Charged = false;
         }
     }

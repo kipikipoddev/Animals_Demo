@@ -1,8 +1,6 @@
-public class Cat(IPrinter printer) : ISound
+public class Cat(IPrinter printer) : Entity(printer), ISound
 {
-    private readonly IPrinter printer = printer;
-
     public bool Can_Make_Sound => true;
 
-    public void Make_Sound() => printer.Print(Printed_Actions.Meow);
+    public void Make_Sound() => Print(Printed_Actions.Meowing);
 }

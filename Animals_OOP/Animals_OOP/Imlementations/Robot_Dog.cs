@@ -6,7 +6,7 @@ public class Robot_Dog(IPrinter printer) : Robot(printer), ISwim
     {
         if (Can_Swim)
         {
-            Printer.Print(Printed_Actions.Swimming);
+            Print(Printed_Actions.Swimming);
             Is_Charged = false;
         }
     }
@@ -15,7 +15,7 @@ public class Robot_Dog(IPrinter printer) : Robot(printer), ISwim
     {
         if (Can_Make_Sound)
         {
-            Printer.Print(Printed_Actions.Woof);
+            Print(Printed_Actions.Barking);
             Is_Charged = false;
         }
     }

@@ -1,12 +1,10 @@
-public class Dog(IPrinter printer) : ISound, ISwim
+public class Dog(IPrinter printer) : Entity(printer), ISound, ISwim
 {
-    private readonly IPrinter printer = printer;
-
     public bool Can_Make_Sound => true;
 
     public bool Can_Swim => true;
 
-    public void Make_Sound() => printer.Print(Printed_Actions.Woof);
+    public void Make_Sound() => Print(Printed_Actions.Barking);
 
-    public void Swim() => printer.Print(Printed_Actions.Swimming);
+    public void Swim() => Print(Printed_Actions.Swimming);
 }

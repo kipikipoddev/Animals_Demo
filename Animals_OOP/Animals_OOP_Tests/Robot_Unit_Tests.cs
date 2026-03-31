@@ -1,21 +1,19 @@
 namespace Animals_OOP_Tests;
 
 [TestFixture]
-public class Robot_Unit_Tests : Base_Unit_Tests
+public class Robot_Unit_Tests : Base_Unit_Tests<Robot>
 {
-    private Robot subject;
-
     [SetUp]
     public override void SetUp()
     {
         base.SetUp();
-        subject = new Robot(Printer);
+        Subject = new Robot(Printer);
     }
 
     [Test]
     public void Robot_Make_Sound()
     {
-        subject.Make_Sound();
+        Subject.Make_Sound();
 
         Verify_Never();
     }
@@ -23,18 +21,18 @@ public class Robot_Unit_Tests : Base_Unit_Tests
     [Test]
     public void Robot_Make_Sound_Charged()
     {
-        subject.Charge();
+        Subject.Charge();
 
-        subject.Make_Sound();
+        Subject.Make_Sound();
 
-        Verify(Printed_Actions.Beep);
-        Assert.That(subject.Is_Charged, Is.False);
+        Verify(Printed_Actions.Beeping);
+        Assert.That(Subject.Is_Charged, Is.False);
     }
 
     [Test]
     public void Robot_Charge()
     {
-        subject.Charge();
+        Subject.Charge();
 
         Verify(Printed_Actions.Charging);
     }
@@ -42,8 +40,8 @@ public class Robot_Unit_Tests : Base_Unit_Tests
     [Test]
     public void Robot_Charge_Charged()
     {
-        subject.Charge();
-        subject.Charge();
+        Subject.Charge();
+        Subject.Charge();
 
         Verify(Printed_Actions.Charging);
     }

@@ -6,14 +6,13 @@ public static class Command_Extensions
 {
     public static bool Send(this Command cmd)
     {
-        var args = cmd.Get_Properties();
-        if (!cmd.Is_Valid(args))
+        if (!cmd.Is_Valid())
             return false;
         foreach (var handler in cmd.Get_Handlers())
-            handler.Invoke(args);
+            handler.Invoke(cmd);
         return true;
     }
 
     private static IEnumerable<MethodInfo> Get_Handlers(this Command cmd) =>
-        cmd.GetType().Get_Methods_With_Attribute(typeof(HandlerAttribute<>));
+        cmd.GetType().Get_Methods_With_Attribute(typeof(HandlerAttribute));
 }

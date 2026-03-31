@@ -1,21 +1,19 @@
 namespace Animals_OOP_Tests;
 
 [TestFixture]
-public class Fish_Unit_Tests : Base_Unit_Tests
+public class Fish_Unit_Tests : Base_Unit_Tests<Fish>
 {
-    private Fish subject;
-
     [SetUp]
     public override void SetUp()
     {
         base.SetUp();
-        subject = new Fish(Printer);
+        Subject = new Fish(Printer);
     }
 
     [Test]
     public void Fish_Swim()
     {
-        subject.Swim();
+        Subject.Swim();
 
         Verify(Printed_Actions.Swimming);
     }

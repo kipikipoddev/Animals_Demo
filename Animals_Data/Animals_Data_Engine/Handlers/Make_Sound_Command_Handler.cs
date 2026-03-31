@@ -2,13 +2,10 @@ namespace Animals_Data_Engine;
 
 public static class Make_Sound_Command_Handler
 {
-    [Handler<Make_Sound_Command>]
-    public static void Handle(Entity_Data entity)
-    {
-        var sound = entity.Child<Sound_Data>().Sound;
-        new Print_Event(entity, sound);
-    }
+    [Handler]
+    public static void Handle(Make_Sound_Command cmd) =>
+        new Print_Event(cmd.Data.Child<Sound_Data>().Sound);
 
-    [Validator<Make_Sound_Command>]
-    public static bool Validate(Entity_Data entity) => entity.Has_Child<Sound_Data>();
+    [Validator]
+    public static bool Validate(Make_Sound_Command cmd) => cmd.Data.Has_Child<Sound_Data>();
 }

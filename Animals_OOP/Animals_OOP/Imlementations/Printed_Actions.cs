@@ -1,8 +1,8 @@
 public enum Printed_Actions
 {
-    Meow,
-    Woof,
-    Beep,
+    Meowing,
+    Barking,
+    Beeping,
     Swimming,
     Charging,
 }

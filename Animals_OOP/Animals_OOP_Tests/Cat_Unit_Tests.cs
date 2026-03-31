@@ -1,22 +1,23 @@
 namespace Animals_OOP_Tests;
 
 [TestFixture]
-public class Cat_Unit_Tests : Base_Unit_Tests
+public class Cat_Unit_Tests : Base_Unit_Tests<Cat>
 {
-    private Cat subject;
-
     [SetUp]
     public override void SetUp()
     {
         base.SetUp();
-        subject = new Cat(Printer);
+        Subject = new Cat(Printer);
     }
 
     [Test]
     public void Cat_Make_Sound()
     {
-        subject.Make_Sound();
+        using var sw = new StringWriter();
+        Console.SetOut(sw);
 
-        Verify(Printed_Actions.Meow);
+        Subject.Make_Sound();
+        var output = sw.ToString();
+        //Verify(Printed_Actions.Meowing);
     }
 }

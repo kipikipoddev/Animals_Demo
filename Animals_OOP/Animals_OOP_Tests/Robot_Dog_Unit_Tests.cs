@@ -1,21 +1,19 @@
 namespace Animals_OOP_Tests;
 
 [TestFixture]
-public class Robot_Dog_Unit_Tests : Base_Unit_Tests
+public class Robot_Dog_Unit_Tests : Base_Unit_Tests<Robot_Dog>
 {
-    private Robot_Dog subject;
-
     [SetUp]
     public override void SetUp()
     {
         base.SetUp();
-        subject = new Robot_Dog(Printer);
+        Subject = new Robot_Dog(Printer);
     }
 
     [Test]
     public void Robot_Dog_Swim()
     {
-        subject.Swim();
+        Subject.Swim();
 
         Verify_Never();
     }
@@ -23,18 +21,18 @@ public class Robot_Dog_Unit_Tests : Base_Unit_Tests
     [Test]
     public void Robot_Dog_Swim_Charged()
     {
-        subject.Charge();
+        Subject.Charge();
 
-        subject.Swim();
+        Subject.Swim();
 
         Verify(Printed_Actions.Swimming);
-        Assert.That(subject.Is_Charged, Is.False);
+        Assert.That(Subject.Is_Charged, Is.False);
     }
 
     [Test]
     public void Robot_Dog_Make_Sound()
     {
-        subject.Make_Sound();
+        Subject.Make_Sound();
 
         Verify_Never();
     }
@@ -42,18 +40,18 @@ public class Robot_Dog_Unit_Tests : Base_Unit_Tests
     [Test]
     public void Robot_Dog_Make_Sound_Charged()
     {
-        subject.Charge();
+        Subject.Charge();
 
-        subject.Make_Sound();
+        Subject.Make_Sound();
 
-        Verify(Printed_Actions.Woof);
-        Assert.That(subject.Is_Charged, Is.False);
+        Verify(Printed_Actions.Barking);
+        Assert.That(Subject.Is_Charged, Is.False);
     }
 
     [Test]
     public void Robot_Dog_Charge()
     {
-        subject.Charge();
+        Subject.Charge();
 
         Verify(Printed_Actions.Charging);
     }
@@ -61,8 +59,8 @@ public class Robot_Dog_Unit_Tests : Base_Unit_Tests
     [Test]
     public void Robot_Dog_Charge_Charged()
     {
-        subject.Charge();
-        subject.Charge();
+        Subject.Charge();
+        Subject.Charge();
 
         Verify(Printed_Actions.Charging);
     }
