@@ -1,27 +1,22 @@
-public class Robot_Dog : Robot, ISwim
+public class Robot_Dog(IPrinter printer) : Robot(printer), ISwim
 {
-    private readonly Dog dog;
-    protected override int Leg_Count => 4;
+    public bool Can_Swim => Is_Charged;
 
-    public Robot_Dog(IPrinter printer)
-        : base(nameof(Robot_Dog), printer)
+    public void Swim()
     {
-        dog = new(nameof(Robot_Dog), printer);
+        if (Can_Swim)
+        {
+            Printer.Print(Printed_Actions.Swimming);
+            Is_Charged = false;
+        }
     }
 
     public override void Make_Sound()
     {
         if (Can_Make_Sound)
-            Print("Bark!");
-        Is_Charged = false;
+        {
+            Printer.Print(Printed_Actions.Woof);
+            Is_Charged = false;
+        }
     }
-
-    public void Swim()
-    {
-        if (Can_Swim)
-            dog.Swim();
-        Is_Charged = false;
-    }
-
-    public bool Can_Swim => Is_Charged;
 }

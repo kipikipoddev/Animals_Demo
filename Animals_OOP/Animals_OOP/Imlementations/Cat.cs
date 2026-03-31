@@ -1,10 +1,8 @@
-public class Cat : Animal
+public class Cat(IPrinter printer) : ISound
 {
-    public Cat(IPrinter printer)
-        : base(nameof(Cat), printer) { }
+    private readonly IPrinter printer = printer;
 
-    public override void Make_Sound()
-    {
-        Print("Meow");
-    }
+    public bool Can_Make_Sound => true;
+
+    public void Make_Sound() => printer.Print(Printed_Actions.Meow);
 }

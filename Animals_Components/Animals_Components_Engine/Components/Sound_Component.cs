@@ -1,9 +1,15 @@
 namespace Animals_Components_Engine;
 
-public record Sound_Component(string Sound) : Component, IHandler<Make_Sound_Command>
+public class Sound_Component(Printed_Actions sound) : Component, ISound_Component
 {
-    public void Handle(Make_Sound_Command cmd)
+    public bool Can_Make_Sound => Parent.Child_Or_Default<ICharge_Component>()?.Is_Charged ?? true;
+
+    public void Make_Sound()
     {
-        cmd.Entity.Print(Sound);
+        if (Can_Make_Sound)
+        {
+            Parent.Child<IPrint_Component>().Print(sound);
+            Parent.Child_Or_Default<ICharge_Component>()?.Discharge();
+        }
     }
 }

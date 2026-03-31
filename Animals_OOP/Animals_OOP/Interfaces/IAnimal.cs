@@ -1,8 +1,5 @@
-public interface IAnimal
+public interface ISound
 {
     bool Can_Make_Sound { get; }
     void Make_Sound();
-
-    bool Can_Walk { get; }
-    void Walk();
 }

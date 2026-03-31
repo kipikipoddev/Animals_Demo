@@ -1,9 +1,15 @@
 namespace Animals_Components_Engine;
 
-public record Swim_Component : Component, IHandler<Swim_Command>
+public class Swim_Component : Component, ISwim_Component
 {
-    public void Handle(Swim_Command cmd)
+    public bool Can_Swim => Parent.Child_Or_Default<ICharge_Component>()?.Is_Charged ?? true;
+
+    public void Swim()
     {
-        cmd.Entity.Print("The {0} is swimming");
+        if (Can_Swim)
+        {
+            Parent.Child<IPrint_Component>().Print(Printed_Actions.Swimming);
+            Parent.Child_Or_Default<ICharge_Component>()?.Discharge();
+        }
     }
 }

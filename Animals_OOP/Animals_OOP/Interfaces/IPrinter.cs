@@ -1,4 +1,4 @@
 public interface IPrinter
 {
-    void Print(string message);
+    void Print(Printed_Actions action);
 }

@@ -1,13 +1,8 @@
-public class Fish : Entity, ISwim
+public class Fish(IPrinter printer) : ISwim
 {
-    public Fish(IPrinter printer)
-        : base(nameof(Fish), printer) { }
+    private readonly IPrinter printer = printer;
 
     public bool Can_Swim => true;
 
-    public void Swim()
-    {
-        if (Can_Swim)
-            Print("The {0} is swimming.");
-    }
+    public void Swim() => printer.Print(Printed_Actions.Swimming);
 }

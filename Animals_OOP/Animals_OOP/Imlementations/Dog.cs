@@ -1,22 +1,12 @@
-public class Dog : Animal, ISwim
+public class Dog(IPrinter printer) : ISound, ISwim
 {
-    public Dog(string name, IPrinter printer)
-        : base(name, printer) { }
+    private readonly IPrinter printer = printer;
 
-    public Dog(IPrinter printer)
-        : base(nameof(Dog), printer) { }
-
-    public override void Make_Sound()
-    {
-        if (Can_Make_Sound)
-            Print("Woof!");
-    }
-
-    public void Swim()
-    {
-        if (Can_Swim)
-            Print("The {0} is swimming.");
-    }
+    public bool Can_Make_Sound => true;
 
     public bool Can_Swim => true;
+
+    public void Make_Sound() => printer.Print(Printed_Actions.Woof);
+
+    public void Swim() => printer.Print(Printed_Actions.Swimming);
 }
