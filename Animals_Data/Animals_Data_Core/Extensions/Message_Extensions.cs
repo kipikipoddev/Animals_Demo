@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace Animals_Data_Core;
 
-public static class Command_Extensions
+public static class Message_Extensions
 {
     public static bool Send(this Message cmd)
     {

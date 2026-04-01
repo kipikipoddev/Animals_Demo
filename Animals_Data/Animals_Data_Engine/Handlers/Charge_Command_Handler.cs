@@ -3,7 +3,8 @@ namespace Animals_Data_Engine;
 public static class Charge_Command_Handler
 {
     [Validator]
-    public static bool Validate(Charge_Message cmd) => cmd.Data.Has_Child<Charge_Data>();
+    public static bool Validate(Charge_Message cmd) =>
+        cmd.Data.ChildOrDefault<Charge_Data>()?.Is_Charged == false;
 
     [Handler]
     public static void Handle(Charge_Message cmd)

@@ -11,16 +11,20 @@ public static class Reflection_Extensions
         this Type type,
         Type att_type
     ) =>
-        Get_Types()
-            .SelectMany(t => t.GetMethods())
-            .Where(m => m.GetCustomAttribute(att_type) != null)
-            .Where(m => m.Get_Parameter_Type()!.IsAssignableFrom(type));
+        att_type
+            .Get_Methods_With_Attribute()
+            .Where(m => m.Get_Parameter_Type().IsAssignableFrom(type));
 
     public static object? Invoke(this MethodInfo method, params object[] args) =>
         method.Invoke(null, args);
 
-    private static Type? Get_Parameter_Type(this MethodInfo method) =>
-        method.GetParameters().FirstOrDefault()?.ParameterType;
+    private static IEnumerable<MethodInfo> Get_Methods_With_Attribute(this Type att_type) =>
+        Get_Types()
+            .SelectMany(t => t.GetMethods())
+            .Where(m => m.GetCustomAttribute(att_type) != null);
+
+    private static Type Get_Parameter_Type(this MethodInfo method) =>
+        method.GetParameters().First().ParameterType;
 
     private static IEnumerable<Type> Get_Types() =>
         AssemblyLoadContext

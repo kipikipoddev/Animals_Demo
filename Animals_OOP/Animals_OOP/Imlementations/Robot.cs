@@ -4,9 +4,12 @@ public class Robot : Entity, ISound, ICharge
 
     public bool Is_Charged { get; protected set; }
 
+    public bool Can_Charge => !Is_Charged;
+
     public void Charge()
     {
-        Print("charging");
+        if (Can_Charge)
+            Print("charging");
         Is_Charged = true;
     }
 

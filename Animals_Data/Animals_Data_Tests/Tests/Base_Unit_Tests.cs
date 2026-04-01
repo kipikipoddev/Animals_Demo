@@ -19,8 +19,6 @@ public abstract class Base_Unit_Tests
 
     protected void Verify_Message(string message) => Assert.That(last_message, Is.EqualTo(message));
 
-    protected void Verify_Never() => Assert.That(last_message, Is.Empty);
-
     protected virtual Entity_Data Get_Subject() =>
         new Entity_Data(Name).Add(new Printer_Data(m => last_message = m));
 }

@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace Animals_Data_Core;
 
-public static class Command_Validation_Extensions
+public static class Message_Validation_Extensions
 {
     public static bool Is_Valid(this Message cmd) =>
         cmd.Get_Validators().All(v => (bool)v.Invoke(cmd)!);

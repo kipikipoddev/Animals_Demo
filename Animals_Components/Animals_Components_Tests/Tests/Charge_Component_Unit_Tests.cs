@@ -12,5 +12,13 @@ public class Charge_Component_Unit_Tests : Entity_Unit_Tests<Charge_Component>
         Component.Is_Charged.Assert_True();
     }
 
+    [Test]
+    public void Test_Charge_Again()
+    {
+        Component.Charge();
+
+        Component.Can_Charge.Assert_False();
+    }
+
     protected override Charge_Component Get_Component() => new();
 }
