@@ -16,6 +16,9 @@ public class Robot : Entity, ISound, ICharge
     public virtual void Make_Sound()
     {
         if (Can_Make_Sound)
+        {
             Print("beeping");
+            Is_Charged = false;
+        }
     }
 }

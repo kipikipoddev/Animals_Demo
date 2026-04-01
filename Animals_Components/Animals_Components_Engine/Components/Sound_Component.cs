@@ -7,6 +7,9 @@ public record Sound_Component(Printed_Actions Sound) : Component, ISound_Compone
     public void Make_Sound()
     {
         if (Can_Make_Sound)
+        {
             (Parent as IEntity_Component)!.Print(Sound);
+            Parent.Child_Or_Default<ICharge_Component>()?.Is_Charged = false;
+        }
     }
 }

@@ -5,12 +5,18 @@ public class Robot_Dog : Robot, ISwim
     public void Swim()
     {
         if (Can_Swim)
+        {
             Print("swimming");
+            Is_Charged = false;
+        }
     }
 
     public override void Make_Sound()
     {
         if (Can_Make_Sound)
+        {
             Print("barking");
+            Is_Charged = false;
+        }
     }
 }

@@ -28,5 +28,6 @@ public class Robot_Unit_Tests : Base_Unit_Tests<Robot>
         Subject.Make_Sound();
 
         Verify("The robot is beeping");
+        Assert.That(Subject.Is_Charged, Is.False);
     }
 }
