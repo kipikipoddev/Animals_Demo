@@ -1,19 +1,11 @@
-[gd_resource type="Resource" script_class="Entity_Resource" load_steps=8 format=3 uid="uid://b250x0u8vt7de"]
+[gd_resource type="Resource" script_class="Entity_Resource" format=3 uid="uid://b250x0u8vt7de"]
 
 [ext_resource type="Script" uid="uid://dkq8j16udghu5" path="res://Resources/Entity_Resource.cs" id="1_4s0qv"]
-[ext_resource type="Script" uid="uid://518715b3rxav" path="res://Resources/Walk_Resource.cs" id="3_d02vd"]
 [ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="4_d6g4q"]
 [ext_resource type="Script" uid="uid://drekhansibswg" path="res://Resources/Sound_Resource.cs" id="4_ti7by"]
 
-[sub_resource type="Resource" id="Resource_46n3f"]
-script = ExtResource("3_d02vd")
-Legs_Count = 4
-Data_Resources = null
-metadata/_custom_type_script = "uid://518715b3rxav"
-
 [sub_resource type="Resource" id="Resource_kxpow"]
 script = ExtResource("4_ti7by")
-Sound = "Meow"
 Data_Resources = null
 metadata/_custom_type_script = "uid://drekhansibswg"
 
@@ -25,5 +17,5 @@ metadata/_custom_type_script = "uid://b27sc0aipcned"
 [resource]
 script = ExtResource("1_4s0qv")
 Name = "cat"
-Data_Resources = Array[Object]([SubResource("Resource_46n3f"), SubResource("Resource_kxpow"), SubResource("Resource_l7xp6")])
+Data_Resources = Array[Object]([SubResource("Resource_kxpow"), SubResource("Resource_l7xp6")])
 metadata/_custom_type_script = "uid://dkq8j16udghu5"

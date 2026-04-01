@@ -1,4 +1,4 @@
-namespace Animals_Data_Core;
+namespace Animals_Data_Tests;
 
 public static class Assert_Extensions
 {
@@ -6,7 +6,7 @@ public static class Assert_Extensions
 
     public static void Assert_True(this bool value) => Assert.That(value, Is.True);
 
-    public static void Assert_Valid(this Command cmd) => cmd.Is_Valid().Assert_True();
+    public static void Assert_Valid(this Message cmd) => cmd.Is_Valid().Assert_True();
 
-    public static void Assert_Invalid(this Command cmd) => cmd.Is_Valid().Assert_False();
+    public static void Assert_Invalid(this Message cmd) => cmd.Is_Valid().Assert_False();
 }

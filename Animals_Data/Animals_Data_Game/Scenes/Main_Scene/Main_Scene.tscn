@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blbaeb6qg3bh5"]
+[gd_scene format=3 uid="uid://blbaeb6qg3bh5"]
 
 [ext_resource type="Script" uid="uid://c36alxqkwqeds" path="res://Scenes/Main_Scene/Main_Scene.cs" id="1_3h14l"]
 [ext_resource type="Resource" uid="uid://b250x0u8vt7de" path="res://Resource_Files/Cat.tres" id="2_4a6e3"]
@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://tua0pso5xo2w" path="res://Resource_Files/Robot.tres" id="5_fw55a"]
 [ext_resource type="Resource" uid="uid://vug6uyfvmc3i" path="res://Resource_Files/Robot_Dog.tres" id="6_njxhh"]
 
-[node name="Main_Scene" type="Control"]
+[node name="Main_Scene" type="Control" unique_id=1674408943]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_3h14l")
 Entities = Array[Object]([ExtResource("2_4a6e3"), ExtResource("3_4i4wd"), ExtResource("4_fn5yn"), ExtResource("5_fw55a"), ExtResource("6_njxhh")])
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=966339819]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,28 +31,28 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=1983042994]
 layout_mode = 2
 columns = 2
 
-[node name="ItemList" type="ItemList" parent="MarginContainer/GridContainer"]
+[node name="ItemList" type="ItemList" parent="MarginContainer/GridContainer" unique_id=860743876]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 
-[node name="Actions_Scene" parent="MarginContainer/GridContainer" instance=ExtResource("2_cut22")]
+[node name="Actions_Scene" parent="MarginContainer/GridContainer" unique_id=244407783 instance=ExtResource("2_cut22")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Actions_Label" type="Label" parent="MarginContainer/GridContainer"]
+[node name="Actions_Label" type="Label" parent="MarginContainer/GridContainer" unique_id=1788696417]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/GridContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/GridContainer" unique_id=1057831871]
 unique_name_in_owner = true
 position = Vector2(826, 467)
 scale = Vector2(0.72439027, 0.72439027)

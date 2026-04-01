@@ -1,20 +1,13 @@
-[gd_resource type="Resource" script_class="Entity_Resource" load_steps=10 format=3 uid="uid://dcokm7ieywhoi"]
+[gd_resource type="Resource" script_class="Entity_Resource" format=3 uid="uid://dcokm7ieywhoi"]
 
 [ext_resource type="Script" uid="uid://c7on4355oa1ee" path="res://Resources/Swim_Resource.cs" id="2_3731c"]
-[ext_resource type="Script" uid="uid://518715b3rxav" path="res://Resources/Walk_Resource.cs" id="3_ad5sg"]
 [ext_resource type="Script" uid="uid://drekhansibswg" path="res://Resources/Sound_Resource.cs" id="4_55xd5"]
 [ext_resource type="Script" uid="uid://dkq8j16udghu5" path="res://Resources/Entity_Resource.cs" id="4_ealxr"]
 [ext_resource type="Script" uid="uid://b27sc0aipcned" path="res://Resources/Sprite_Resource.cs" id="5_3731c"]
 
-[sub_resource type="Resource" id="Resource_46n3f"]
-script = ExtResource("3_ad5sg")
-Legs_Count = 4
-Data_Resources = null
-metadata/_custom_type_script = "uid://518715b3rxav"
-
 [sub_resource type="Resource" id="Resource_kxpow"]
 script = ExtResource("4_55xd5")
-Sound = "Bark"
+Sound = 1
 Data_Resources = null
 metadata/_custom_type_script = "uid://drekhansibswg"
 
@@ -32,5 +25,5 @@ metadata/_custom_type_script = "uid://c7on4355oa1ee"
 [resource]
 script = ExtResource("4_ealxr")
 Name = "dog"
-Data_Resources = Array[Object]([SubResource("Resource_46n3f"), SubResource("Resource_kxpow"), SubResource("Resource_l7xp6"), SubResource("Resource_xn7x3")])
+Data_Resources = Array[Object]([SubResource("Resource_kxpow"), SubResource("Resource_l7xp6"), SubResource("Resource_xn7x3")])
 metadata/_custom_type_script = "uid://dkq8j16udghu5"

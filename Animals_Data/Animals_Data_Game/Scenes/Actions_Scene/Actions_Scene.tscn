@@ -30,13 +30,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Make Sound"
 
-[node name="Walk_Button" type="Button" parent="VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Walk"
-
 [node name="Swim_Button" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 70)
@@ -52,6 +45,5 @@ theme_override_font_sizes/font_size = 32
 text = "Charge"
 
 [connection signal="pressed" from="VBoxContainer/Make_Sound_Button" to="." method="On_Make_Sound_Button_Pressed"]
-[connection signal="pressed" from="VBoxContainer/Walk_Button" to="." method="On_Walk_Button_Pressed"]
 [connection signal="pressed" from="VBoxContainer/Swim_Button" to="." method="On_Swim_Button_Pressed"]
 [connection signal="pressed" from="VBoxContainer/Charge_Button" to="." method="On_Charge_Button_Pressed"]

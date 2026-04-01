@@ -13,7 +13,8 @@ public static class Reflection_Extensions
     ) =>
         Get_Types()
             .SelectMany(t => t.GetMethods())
-            .Where(m => m.Get_Parameter_Type()?.IsAssignableFrom(type) ?? false);
+            .Where(m => m.GetCustomAttribute(att_type) != null)
+            .Where(m => m.Get_Parameter_Type()!.IsAssignableFrom(type));
 
     public static object? Invoke(this MethodInfo method, params object[] args) =>
         method.Invoke(null, args);

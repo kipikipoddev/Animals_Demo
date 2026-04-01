@@ -6,11 +6,6 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="Extensions\**" />
-    <EmbeddedResource Remove="Extensions\**" />
-    <None Remove="Extensions\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
@@ -21,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Animals_Data_Engine\Animals_Data_Engine.csproj" />
+    <ProjectReference Include="..\Animals_Data_Game\Animals_Data_Game.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,10 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "C:/Godot_v4.5-stable_mono_win64/Godot_v4.5-stable_mono_win64.exe",
+            "program": "C:/Godot_v4.6.1-stable_mono_win64/Godot_v4.6.1-stable_mono_win64.exe",
             "args": [],
             "cwd": "${workspaceFolder}\\Animals_Data\\Animals_Data_Game",
-            //"cwd": "${workspaceFolder}\\Animals_Components\\Animals_Components_Game",
             "stopAtEntry": false,
             "console": "internalConsole",
         }
