@@ -7,4 +7,5 @@ public enum Printed_Actions
     Beeping,
     Swimming,
     Charging,
+    Discharging,
 }

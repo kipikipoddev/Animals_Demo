@@ -1,7 +1,7 @@
 namespace Animals_Components_Tests;
 
 [TestFixture]
-public class Swim_Component_Unit_Tests : Base_Unit_Tests<Swim_Component>
+public class Swim_Component_Unit_Tests : Entity_Unit_Tests<Swim_Component>
 {
     [Test]
     public void Test_Swim()
@@ -25,12 +25,10 @@ public class Swim_Component_Unit_Tests : Base_Unit_Tests<Swim_Component>
     [Test]
     public void Test_Swim_If_Charged()
     {
-        Subject.Add(new Charge_Component());
-        Subject.Child<ICharge_Component>().Charge();
+        Subject.Add(new Charge_Component(true));
 
         Component.Swim();
 
         Verify(Printed_Actions.Swimming);
-        Subject.Child<ICharge_Component>().Is_Charged.Assert_False();
     }
 }

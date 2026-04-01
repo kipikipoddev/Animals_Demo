@@ -5,7 +5,7 @@ public partial class Main_Scene : Control
     [Export]
     public Entity_Resource[] Entities;
 
-    private Dictionary<string, Data> name_to_data;
+    private Dictionary<string, Entity_Data> name_to_data;
 
     private ItemList item_list;
     private Label actions_label;
@@ -32,10 +32,10 @@ public partial class Main_Scene : Control
 
     private void Add_Entites()
     {
-        var entities = Entities.Select(e => e.Map()).ToArray();
+        var entities = Entities.Select(e => e.Map() as Entity_Data).ToArray();
         foreach (var entity in entities)
-            entity.Add(new Print_Action_Data(Print_Message));
-        name_to_data = entities.ToDictionary(d => d.Child<Name_Data>().Name);
+            entity.Add(new Printer_Data(Print_Message));
+        name_to_data = entities.ToDictionary(d => d.Name);
         foreach (var name in name_to_data.Keys)
             item_list.AddItem(name);
     }

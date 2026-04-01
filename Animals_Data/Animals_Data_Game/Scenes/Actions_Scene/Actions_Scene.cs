@@ -4,7 +4,7 @@ public partial class Actions_Scene : Control
     private Button charge_button;
     private Button make_sound_button;
 
-    public Data Data
+    public Entity_Data Data
     {
         get;
         set

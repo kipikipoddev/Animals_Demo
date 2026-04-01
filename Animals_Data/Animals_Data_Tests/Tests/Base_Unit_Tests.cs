@@ -5,7 +5,7 @@ public abstract class Base_Unit_Tests
 {
     private string last_message = string.Empty;
     private const string Name = "test";
-    protected Data Subject;
+    protected Entity_Data Subject;
 
     [SetUp]
     public virtual void SetUp()
@@ -21,6 +21,6 @@ public abstract class Base_Unit_Tests
 
     protected void Verify_Never() => Assert.That(last_message, Is.Empty);
 
-    protected virtual Data Get_Subject() =>
-        new Data().Add(new Name_Data(Name)).Add(new Print_Action_Data(m => last_message = m));
+    protected virtual Entity_Data Get_Subject() =>
+        new Entity_Data(Name).Add(new Printer_Data(m => last_message = m));
 }

@@ -6,9 +6,6 @@ public static class Action_Command_Handler
     public static bool Validate(Action_Message cmd) =>
         cmd.Data.Get_Charge_Data()?.Is_Charged ?? true;
 
-    [Handler]
-    public static void Handle(Action_Message cmd) => cmd.Data.Get_Charge_Data()?.Is_Charged = false;
-
     private static Charge_Data? Get_Charge_Data(this Data data) =>
         data.ChildOrDefault<Charge_Data>();
 }

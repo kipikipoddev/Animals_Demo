@@ -21,12 +21,4 @@ public class Charge_Message_Unit_Tests : Base_Unit_Tests
         Verify(Printed_Actions.Charging);
         Subject.Child<Charge_Data>().Is_Charged.Assert_True();
     }
-
-    [Test]
-    public void Assert_Charge_Invalid_When_Already_Charged()
-    {
-        Subject.Add(new Charge_Data(true));
-
-        new Charge_Message(Subject).Assert_Invalid();
-    }
 }

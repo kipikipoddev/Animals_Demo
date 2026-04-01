@@ -24,6 +24,5 @@ public class Action_Message_Unit_Tests : Base_Unit_Tests
         new Make_Sound_Message(Subject).Send().Assert_True();
 
         Verify(Printed_Actions.Meowing);
-        Subject.Child<Charge_Data>().Is_Charged.Assert_False();
     }
 }

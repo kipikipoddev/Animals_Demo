@@ -1,23 +1,21 @@
 namespace Animals_Components_Tests;
 
 [TestFixture]
-public abstract class Base_Unit_Tests<T>
+public abstract class Entity_Unit_Tests<T>
     where T : Component
 {
     private const string Name = "test";
     private string last_message;
-    protected IComponent Subject;
+    protected Entity_Component Subject;
     protected T Component;
 
     [SetUp]
     public virtual void SetUp()
     {
         last_message = string.Empty;
+        Subject = new Entity_Component(Name, (action) => last_message = action);
         Component = Get_Component();
-        Subject = new Component()
-            .Add(new Print_Component(m => last_message = m))
-            .Add(new Name_Component(Name))
-            .Add(Component);
+        Subject.Add(Component);
     }
 
     protected void Verify(Printed_Actions action) =>

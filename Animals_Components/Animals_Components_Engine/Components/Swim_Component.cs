@@ -7,9 +7,6 @@ public record Swim_Component : Component, ISwim_Component
     public void Swim()
     {
         if (Can_Swim)
-        {
-            Parent.Child<IPrint_Component>().Print(Printed_Actions.Swimming);
-            Parent.Child_Or_Default<ICharge_Component>()?.Discharge();
-        }
+            (Parent as IEntity_Component)!.Print(Printed_Actions.Swimming);
     }
 }
