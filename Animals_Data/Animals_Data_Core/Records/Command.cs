@@ -1,3 +1,3 @@
 namespace Animals_Data_Core;
 
-public record Message;
+public record Command;

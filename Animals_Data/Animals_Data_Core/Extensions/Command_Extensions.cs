@@ -2,9 +2,9 @@ using System.Reflection;
 
 namespace Animals_Data_Core;
 
-public static class Message_Extensions
+public static class Command_Extensions
 {
-    public static bool Send(this Message cmd)
+    public static bool Send(this Command cmd)
     {
         if (cmd.Is_Invalid())
             return false;
@@ -13,6 +13,6 @@ public static class Message_Extensions
         return true;
     }
 
-    private static IEnumerable<MethodInfo> Get_Handlers(this Message cmd) =>
+    private static IEnumerable<MethodInfo> Get_Handlers(this Command cmd) =>
         cmd.GetType().Get_Methods_With_Attribute(typeof(HandlerAttribute));
 }
