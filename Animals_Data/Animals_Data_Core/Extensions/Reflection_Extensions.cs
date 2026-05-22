@@ -1,35 +1,34 @@
 using System.Reflection;
-using System.Runtime.Loader;
 
 namespace Animals_Data_Core;
 
 public static class Reflection_Extensions
 {
-    private const string Assemblies_Name = "Data";
+    public static IEnumerable<object> Get_Assembly_Objects(
+        this Assembly assembly,
+        params Type[] interface_types
+    ) => assembly.Get_Interface_Types(interface_types).Select(Activator.CreateInstance)!;
 
-    public static IEnumerable<MethodInfo> Get_Methods_With_Attribute(
-        this Type type,
-        Type att_type
-    ) =>
-        att_type
-            .Get_Methods_With_Attribute()
-            .Where(m => m.Get_Parameter_Type().IsAssignableFrom(type));
+    public static bool Is_Interface<T>(this object obj, params Type[] interface_types)
+        where T : Command =>
+        Get_Interface_Type(obj, interface_types).Any(h => h.IsAssignableFrom(typeof(T)));
 
-    public static object? Invoke(this MethodInfo method, params object[] args) =>
-        method.Invoke(null, args);
+    public static IEnumerable<Type> Get_Interface_Types(
+        this Assembly assembly,
+        params Type[] interface_types
+    ) => assembly.GetTypes().Where(t => Has_Interface(t, interface_types));
 
-    private static IEnumerable<MethodInfo> Get_Methods_With_Attribute(this Type att_type) =>
-        Get_Types()
-            .SelectMany(t => t.GetMethods())
-            .Where(m => m.GetCustomAttribute(att_type) != null);
+    private static bool Has_Interface(Type type, Type[] interface_types) =>
+        !type.IsAbstract
+        && !type.IsInterface
+        && type.GetInterfaces().Any(t => Is_Interface(t, interface_types));
 
-    private static Type Get_Parameter_Type(this MethodInfo method) =>
-        method.GetParameters().First().ParameterType;
+    private static IEnumerable<Type> Get_Interface_Type(object obj, Type[] interface_types) =>
+        obj.GetType()
+            .GetInterfaces()
+            .Where(i => Is_Interface(i, interface_types))
+            .Select(i => i.GetGenericArguments().First());
 
-    private static IEnumerable<Type> Get_Types() =>
-        AssemblyLoadContext
-            .All.SelectMany(ctx => ctx.Assemblies)
-            .Distinct()
-            .Where(a => a.FullName!.Contains(Assemblies_Name))
-            .SelectMany(a => a.GetTypes());
+    private static bool Is_Interface(Type type, Type[] interface_types) =>
+        type.IsGenericType && interface_types.Contains(type.GetGenericTypeDefinition());
 }

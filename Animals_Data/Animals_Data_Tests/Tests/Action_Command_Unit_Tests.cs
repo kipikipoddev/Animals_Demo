@@ -1,7 +1,7 @@
 namespace Animals_Data_Tests;
 
 [TestFixture]
-public class Action_Message_Unit_Tests : Base_Unit_Tests
+public class Action_Command_Unit_Tests : Base_Unit_Tests
 {
     [SetUp]
     public override void SetUp()
@@ -11,17 +11,17 @@ public class Action_Message_Unit_Tests : Base_Unit_Tests
     }
 
     [Test]
-    public void Test_Action_Message_Invalid_When_Uncharged()
+    public void Test_Action_Command_Invalid_When_Uncharged()
     {
-        new Make_Sound_Message(Subject).Assert_Invalid();
+        new Make_Sound_Command(Subject).Assert_Invalid();
     }
 
     [Test]
-    public void Test_Action_Message_When_Charged()
+    public void Test_Action_Command_When_Charged()
     {
-        new Charge_Message(Subject).Send();
+        new Charge_Command(Subject).Send();
 
-        new Make_Sound_Message(Subject).Send().Assert_True();
+        new Make_Sound_Command(Subject).Send().Assert_True();
 
         Verify(Printed_Actions.Meowing);
         Subject.Child<Charge_Data>().Is_Charged.Assert_False();

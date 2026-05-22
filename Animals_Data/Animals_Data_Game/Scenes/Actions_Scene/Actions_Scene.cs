@@ -24,19 +24,19 @@ public partial class Actions_Scene : Control
 
     public void On_Swim_Button_Pressed()
     {
-        new Swim_Message(Data).Send();
+        new Swim_Command(Data).Send();
         Update();
     }
 
     public void On_Charge_Button_Pressed()
     {
-        new Charge_Message(Data).Send();
+        new Charge_Command(Data).Send();
         Update();
     }
 
     public void On_Make_Sound_Button_Pressed()
     {
-        new Make_Sound_Message(Data).Send();
+        new Make_Sound_Command(Data).Send();
         Update();
     }
 
@@ -49,8 +49,8 @@ public partial class Actions_Scene : Control
 
     private void Update()
     {
-        swim_button.Disabled = new Swim_Message(Data).Is_Invalid();
-        charge_button.Disabled = new Charge_Message(Data).Is_Invalid();
-        make_sound_button.Disabled = new Make_Sound_Message(Data).Is_Invalid();
+        swim_button.Disabled = new Swim_Command(Data).Is_Invalid();
+        charge_button.Disabled = new Charge_Command(Data).Is_Invalid();
+        make_sound_button.Disabled = new Make_Sound_Command(Data).Is_Invalid();
     }
 }

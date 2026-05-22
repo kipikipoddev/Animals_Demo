@@ -4,11 +4,19 @@ namespace Animals_Data_Core;
 
 public static class Command_Validation_Extensions
 {
-    public static bool Is_Valid(this Command cmd) =>
-        cmd.Get_Validators().All(v => (bool)v.Invoke(cmd)!);
+    private static readonly Type validator_interface = typeof(IValidator<>);
+    private static readonly List<object> validators = [];
 
-    public static bool Is_Invalid(this Command cmd) => !cmd.Is_Valid();
+    public static void Add_Validators(this Assembly assembly) =>
+        validators.AddRange(assembly.Get_Assembly_Objects(validator_interface));
 
-    private static IEnumerable<MethodInfo> Get_Validators(this Command cmd) =>
-        cmd.GetType().Get_Methods_With_Attribute(typeof(ValidatorAttribute));
+    public static bool Is_Valid<T>(this T cmd)
+        where T : Command => Get_Validators<T>().All(validator => validator.Validate(cmd));
+
+    public static bool Is_Invalid<T>(this T cmd)
+        where T : Command => !cmd.Is_Valid();
+
+    private static IEnumerable<IValidator<T>> Get_Validators<T>()
+        where T : Command =>
+        validators.Where(v => v.Is_Interface<T>(validator_interface)).Select(v => (IValidator<T>)v);
 }
