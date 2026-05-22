@@ -14,6 +14,7 @@ public partial class Main_Scene : Control
 
     public override void _Ready()
     {
+        typeof(Entity_Data).Assembly.Add();
         Get_Nodes();
 
         Add_Entites();

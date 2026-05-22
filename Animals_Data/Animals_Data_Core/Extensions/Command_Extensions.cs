@@ -14,5 +14,5 @@ public static class Command_Extensions
     }
 
     private static IEnumerable<MethodInfo> Get_Handlers(this Command cmd) =>
-        cmd.GetType().Get_Methods_With_Attribute(typeof(HandlerAttribute));
+        cmd.GetType().Get_Methods_With_Attribute<HandlerAttribute>();
 }

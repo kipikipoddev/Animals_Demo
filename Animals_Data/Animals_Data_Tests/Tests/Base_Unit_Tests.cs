@@ -10,6 +10,7 @@ public abstract class Base_Unit_Tests
     [SetUp]
     public virtual void SetUp()
     {
+        typeof(Entity_Data).Assembly.Add();
         last_message = string.Empty;
         Subject = Get_Subject();
     }
