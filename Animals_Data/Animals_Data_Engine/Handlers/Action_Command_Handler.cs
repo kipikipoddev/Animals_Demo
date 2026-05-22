@@ -1,11 +1,13 @@
 namespace Animals_Data_Engine;
 
-public class Action_Command_Handler : IValidator<Action_Command>, IHandler<Action_Command>
+public static class Action_Command_Handler
 {
-    public bool Validate(Action_Command cmd) => Get_Charge_Data(cmd)?.Is_Charged ?? true;
+    [Validator]
+    public static bool Validate(Action_Message cmd) => Get_Charge_Data(cmd)?.Is_Charged ?? true;
 
-    public void Handle(Action_Command cmd) => Get_Charge_Data(cmd)?.Is_Charged = false;
+    [Handler]
+    public static void Handle(Action_Message cmd) => Get_Charge_Data(cmd)?.Is_Charged = false;
 
-    private static Charge_Data? Get_Charge_Data(Action_Command cmd) =>
+    private static Charge_Data? Get_Charge_Data(Action_Message cmd) =>
         cmd.Data.ChildOrDefault<Charge_Data>();
 }
